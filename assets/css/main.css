@@ -1,0 +1,51 @@
+.form__div__grid{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+}
+
+.form__div__label__padding-top{
+    padding-top: 6px;
+    color: black;
+}
+
+.form__div__label__marging-right{
+    margin-right: 10px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4e73df;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.body__bg-blue{
+    /* background-color: #4e73df; */
+}
+
+.form__div__img__marging-top{
+    margin-top: 100px;
+}
+
+.form__div__img__marging-left{
+    margin-left: 30px;
+}
+
+.table__tbody__td__flex__center{
+    display: flex;
+    align-items: center;
+}
+
+.button{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .color{
+    color: yellow;
+} */

@@ -32,6 +32,7 @@ class Code extends UserSession {
         }else{
             $code = $this->CodeModel->get_code_by_code($numero);
             $this->CodeModel->usecode($iduser,$code['idcode']);
+
             redirect( 'code' );
         }
     }
@@ -54,7 +55,8 @@ class Code extends UserSession {
             $iduser = $user['idutilisateur'];
             $code = $this->CodeModel->get_code_by_id($idcode_user);
             $this->CodeModel->valider($idcode_user);
-            $this->PorteFeuilleModel->insert(1,$iduser,$code['montant']);
+            
+            
         } catch (Exception $th) {
             echo $th->getMessage();
         }

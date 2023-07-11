@@ -12,8 +12,11 @@ class ProfilModel extends CI_Model {
     public function get_dernier_profil($idutilisateur)
     {
         $query = $this->db->query("SELECT * FROM v_dernier_profil WHERE idutilisateur = ?", array($idutilisateur));
+       
+        if($query->num_rows()==0){
+            return null;
+        }
         $row = $query->row_array();
-
         return $row;
     }
     public function insert_completion_utilisateur($idutilisateur, $taille, $poids)

@@ -25,18 +25,15 @@ class Programme extends UserSession {
         $data['page'] = $page;
         $data['planning'] = $planning;
         $data['debut'] = $debut;
-
         $this->load->view('template.php',$data);
     }
-
     public function index(){
-        $user = $this->session->user; 
+        $user = $this->session->user;
         $iduser = $user['idutilisateur'];
-        $dernier_programme = $this->ProgrammeModel->get_dernier_programme($iduser); 
+        $dernier_programme = $this->ProgrammeModel->get_dernier_programme($iduser);
+
         if($dernier_programme==null){
-            $page = 'objectif';
-            $planning = null;
-            redirect( 'objectif' );
+            redirect( 'regime/suggestion' );
         }
         else{
             $page = 'planning';

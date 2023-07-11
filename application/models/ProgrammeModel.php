@@ -19,7 +19,7 @@ class ProgrammeModel extends CI_Model {
         }
         $len = count($res);
         for ($i=1; $i <= $regime['duree']  ; $i++) { 
-            $index = random_int(0,$len);
+            $index = rand(0,$len);
             $programme = $res[$index];
             $this->insert_details_programme($idprogramme,$i,$programme['petit_dejeuner'],$programme['dejeuner'],$programme['diner']);
         }

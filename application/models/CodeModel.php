@@ -27,7 +27,7 @@ class CodeModel extends CI_Model {
         return $result;
     }
     public function get_unvalidated_code_users() {
-        $this->db->where('estValide', 0);
+        $this->db->where('estvalide', 0);
         $query = $this->db->get('v_code_utilisateur');
         return $query->result_array();
     }
@@ -44,13 +44,13 @@ class CodeModel extends CI_Model {
         $data = array(
             'idutilisateur' => $user,
             'idcode' => $idcode,
-            'estValide' => 0
+            'estvalide' => 0
         );
         $this->db->insert('code_utilisateur', $data);
     }
     public function refuser($idcode_utilisateur) {
         $data = array(
-            'estValide' => 2
+            'estvalide' => 2
         );
     
         $this->db->where('idcode_utilisateur', $idcode_utilisateur);
@@ -58,7 +58,7 @@ class CodeModel extends CI_Model {
     }
     public function valider($idcode_utilisateur) {
         $data = array(
-            'estValide' => 1
+            'estvalide' => 1
         );
     
         $this->db->where('idcode_utilisateur', $idcode_utilisateur);

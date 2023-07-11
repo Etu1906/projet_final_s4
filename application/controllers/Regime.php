@@ -22,20 +22,20 @@ class Regime extends UserSession {
         
         $data['regimes'] = $regimes; 
         $data['page'] = 'suggestion.php';
+        $data['title'] = 'Nous vous suggérons...';
         $this->load->view('template.php',$data);
     }
-
     public function acheter(){
         try {
             $idregime = $this->input->get('idregime');
             $user = $this->session->user; 
             $iduser = $user['idutilisateur'];
-            $regime = $this->get_regime_by_id($idregime);
-            $idprogramme = $this->RegimeModel->achat($regime,$iduser);
+            $regime = $this->RegimeModel->get_regime_by_id($idregime);
+            $idprogramme = $this->RegimeModel->achat($iduser,$regime);
             $this->ProgrammeModel->generate_plat($regime,$idprogramme);
             redirect('programme/index');
-        } catch (\Exception $th) {
-            echo $e->getMessage();
+        } catch (Exception $th) {
+            echo $th->getMessage();
         }
     }
 }

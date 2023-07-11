@@ -1,4 +1,3 @@
-
       <div class="blog_section layout_padding mb-5">
          <div class="container">
             <div class="row">
@@ -11,8 +10,9 @@
                         <label for=""> Vous voulez connaitre votre planning? </label>
                            <input type="text" class="mail_text" placeholder="Choisisez un jour" name="jours">
                            <input type="hidden" class="mail_text" placeholder="Choisisez un jour" value="<?php echo $programme; ?>" name="programme">
-                        </div>
+                        </div>                       
                         <div class="col-md-12 send_bt" > <input type="submit" value="rechercher"> </div>
+                        <a style="margin-left:20px; margin-top:10px;  color: #de8475; "  href="<?php echo base_url() ?>planning/pdf"> Exporter au format pdf </a>
                      </div>
                </form>
                </div>
@@ -62,4 +62,3 @@
             </div>
          </div>
       </div>
-   

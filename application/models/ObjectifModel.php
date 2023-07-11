@@ -5,8 +5,10 @@ class ObjectifModel extends CI_Model {
     public function get_dernier_objectif($idutilisateur)
     {
         $query = $this->db->query("SELECT * FROM v_dernier_objectif_utilisateur WHERE idutilisateur = ?", array($idutilisateur));
+        if($query->num_rows()==0){
+            return null;
+        }
         $row = $query->row_array();
-
         return $row;
     }
     public function insert_objectif_utilisateur($idutilisateur, $poidsobjectif, $idobjectif)
