@@ -1,11 +1,10 @@
--- -- Création de la base de données
--- CREATE DATABASE gestion_employes;
+-- Création de la base de données
+CREATE DATABASE gestion_employes;
 
--- -- Utilisation de la base de données
--- USE gestion_employes;
+-- Utilisation de la base de données
+USE gestion_employes;
 
 -- Création de la table des employés
-
 CREATE TABLE employees (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL,
